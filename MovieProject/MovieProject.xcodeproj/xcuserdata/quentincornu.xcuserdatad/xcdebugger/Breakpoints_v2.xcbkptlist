@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "A320BA2C-1684-4DBA-80BB-96D5100DBB12"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E4584EC2-32CD-42FF-A2A6-A0ABE71B8BAC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieProject/HomeView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "loadData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E4584EC2-32CD-42FF-A2A6-A0ABE71B8BAC - cb85de8b5c4f70a8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in MovieProject.HomeView.loadData() -&gt; ()"
+                  moduleName = "MovieProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/quentincornu/Desktop/MovieProject/MovieProject/HomeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "672">
+               </Location>
+               <Location
+                  uuid = "E4584EC2-32CD-42FF-A2A6-A0ABE71B8BAC - 1123ff34c13cd6ab"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for closure #1 @Sendable () async -&gt; () in MovieProject.HomeView.loadData() -&gt; ()"
+                  moduleName = "MovieProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/quentincornu/Desktop/MovieProject/MovieProject/HomeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "160">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
