@@ -8,18 +8,40 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    @State var loadedMovie: Movie? = nil
+    
     var body: some View {
-        Button {
-            loadData()
-        } label: {
-            Text("Fetch data...")
+        ScrollView {
+            VStack {
+                
+                if loadedMovie != nil {
+                    MovieCellView(movie: loadedMovie!)
+                } else {
+                    Text("Loading...")
+                        .foregroundColor(.white)
+                }
+                
+                Button {
+                    loadData()
+                } label: {
+                    Text("Fetch data...")
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(.blue)
+                        .cornerRadius(10)
+                        .padding()
+                }
+            }
+            .frame(maxWidth: .infinity)
         }
-
+        
     }
     
     func loadData() {
         Task.init {
-            let url = URL(string: "https://api.themoviedb.org/3/movie/550?api_key=ee6b2b9e0970948e6741d6b7985191fb")!
+            let url = URL(string: "https://api.themoviedb.org/3/movie/550?api_key=\(API_KEY)")!
 
             do {
                 let (data, response) = try await URLSession.shared.data(from: url)
@@ -28,9 +50,11 @@ struct HomeView: View {
                 
                 let myNewMovie = try jsonDecoder.decode(Movie.self, from: data)
                 
-                
+                self.loadedMovie = myNewMovie
             } catch {
+                print("❌")
                 print(error)
+                print("❌")
             }
         }
     }
@@ -39,5 +63,6 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+            .background(.black)
     }
 }

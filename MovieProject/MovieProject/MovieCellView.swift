@@ -8,10 +8,17 @@
 import SwiftUI
 
 struct Movie: Decodable {
-    let imageURL: URL?
+    let imageExtension: String
     let title: String
     let description: String
     let rating: Float
+    
+    enum CodingKeys: String, CodingKey/*SANS LE S*/ {
+        case imageExtension = "poster_path"
+        case title
+        case description = "overview"
+        case rating = "vote_average"
+    }
 }
 
 struct MovieCellView: View {
@@ -20,7 +27,7 @@ struct MovieCellView: View {
     
     var body: some View {
         HStack(spacing: 16) {
-            AsyncImage(url: movie.imageURL) { image in
+            AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/w500\(movie.imageExtension)")) { image in
                 image
                     .resizable()
                     .aspectRatio(contentMode: .fill)
@@ -51,7 +58,8 @@ struct MovieCellView: View {
 struct MovieCellView_Previews: PreviewProvider {
     
     static let previewMovie = Movie(
-        imageURL: URL(string: "https://www.themoviedb.org/t/p/w1280/xBl5AGw7HXZcv1nNXPlzGgO4Cfo.jpg"),
+        imageExtension: "/xBl5AGw7HXZcv1nNXPlzGgO4Cfo.jpg",
+//        imageURL: URL(string: "https://www.themoviedb.org/t/p/w1280"),
         title: "M3GAN",
         description: "M3GAN est une merveille d'intelligence artificielle, une poupée réaliste qui est programmée pour être la meilleure compagne d'un enfant et la meilleure alliée d'un parent. Conçue par Gemma, une brillante roboticienne, M3GAN peut écouter, regarder et apprendre, car elle joue le rôle d'amie et d'enseignante, de compagne de jeu et de protectrice.",
         rating: 7.3
